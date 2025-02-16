@@ -8,12 +8,15 @@ namespace PokemonReview.Helper
     {
         public MappingProfiles()
         {
-            CreateMap<Pokemon, PokemonDto>();
+            CreateMap<Pokemon, PokemonDto>().ReverseMap();
             CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
             CreateMap<Country, CountryDto>();
+            CreateMap<CountryDto, Country>();
             CreateMap<Owner, OwnerDto>();
-            CreateMap<Review, ReviewDto>();
-            CreateMap<Reviewer, ReviewerDto>();
+            CreateMap<OwnerDto, Owner>();
+            CreateMap<Review, ReviewDto>().ReverseMap();
+            CreateMap<Reviewer, ReviewerDto>().ReverseMap();
         }
     }
 }
